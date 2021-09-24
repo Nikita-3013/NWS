@@ -1,0 +1,11 @@
+[run]
+branch = True
+omit = */virtualenv/*
+       */__init__*
+       */test*.py
+       */migrations/*
+       */urls.py
+       */manage.py
+       */admin.py
+       */apps.py
+       */settings.py
