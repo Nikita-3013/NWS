@@ -79,15 +79,27 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 DATABASES = {
     'default': {
         'NAME': 'NWS',
-        'ENGINE': 'mssql',
-        'HOST': 'DESKTOP-O3UFAEG\\SQLEXPRESS',
-        'USER': 'sa',
-        'PASSWORD': 'P@ssw0rd',
-        'OPTIONS': {
-                'driver': 'ODBC Driver 17 for SQL Server',
-            },
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'PORT': '5432'
+        
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'NAME': 'NWS',
+#         'ENGINE': 'mssql',
+#         'HOST': 'DESKTOP-O3UFAEG\\SQLEXPRESS',
+#         'USER': 'sa',
+#         'PASSWORD': 'P@ssw0rd',
+#         'OPTIONS': {
+#                 'driver': 'ODBC Driver 17 for SQL Server',
+#             },
+#     }
+# }
 
 
 # Password validation

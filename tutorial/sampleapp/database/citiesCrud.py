@@ -5,7 +5,7 @@ def getCities():
     cursor = connection.cursor()
     cityList=[]
     try:
-        cursor.execute("SELECT City,Lat,Long FROM cities")
+        cursor.execute('SELECT * FROM public."Cities"')
         
         result_set = cursor.fetchall()
         for row in result_set:
@@ -18,13 +18,12 @@ def getByCityName(cityName):
     cursor = connection.cursor()
     CityObj=City(cityName)
     try:
-        cursor.execute("SELECT City,Lat,Long FROM cities WHERE City=%s",[cityName])
+        cursor.execute('SELECT * FROM public."Cities" WHERE public."Cities"."City"=%s',[cityName])
         
         result_set = cursor.fetchall()
         
         for row in result_set:
             CityObj=City(cityName,row[1],row[2])
-
     finally:
         cursor.close()
     return CityObj
