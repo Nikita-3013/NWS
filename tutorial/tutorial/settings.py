@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!j$fll4cc6&9fb)xwkk-4fb5&h&m%gp$b5)qp81&krei7j!e3p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,18 +75,38 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+#postgresql://username:password@hostname:5432/databasename
+# DATABASES = {
+#     'default':{
+#         'postgresql://NikitaP:Sansoft@1@postgresql101.postgres.database.azure.com:5432/NWS'
+#     }
+# }
+#dbname='{your_database}' user='NikitaP@postgresql101' host='postgresql101.postgres.database.azure.com' password='{your_password}' port='5432' sslmode='true'
 DATABASES = {
     'default': {
-        'NAME': 'NWS',
+        'NAME': 'nws',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'localhost',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'PORT': '5432'
+        'HOST': 'postgresql101.postgres.database.azure.com',
+        'USER': 'NikitaP@postgresql101',
+        'PASSWORD': 'Sansoft@1',
+        'PORT': '5432',
         
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'NAME': 'NWS',
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'HOST': 'localhost',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'PORT': '5432'
+
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
